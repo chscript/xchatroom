@@ -21,4 +21,3 @@ cd serve && npm install && node app.js
 ## 项目展示图：
 ![img](https://github.com/CHScript/MeChat/blob/main/demo/a.png)  
 ![img](https://github.com/CHScript/MeChat/blob/main/demo/b.png)  
-![img](https://github.com/CHScript/MeChat/blob/main/demo/c.png)  
