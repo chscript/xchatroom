@@ -13,8 +13,6 @@ const userSchema = new Schema({
     }
 }, { versionKey: false })
 
-
-
 const User = model('User', userSchema);
 
 module.exports = User
