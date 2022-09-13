@@ -19,7 +19,6 @@
                             <p>用户信息</p>
                         </a>
                     </li>
-
                     <li><a href="#">
                             <n-icon size="20">
                                 <PeopleOutline />
@@ -27,7 +26,6 @@
                             <p>我的好友</p>
                         </a>
                     </li>
-
                     <li><a href="#" @click="handleLoginOut">
                             <n-icon size="20">
                                 <LogOutOutline />

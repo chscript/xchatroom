@@ -1,6 +1,5 @@
 <template>
-
-    <n-input v-model:value="newContent" ref="newStatus" placeholder="请输入内容" type="textarea" :autosize="{
+    <n-input v-model="newContent" placeholder="请输入内容" type="textarea" :autosize="{
         minRows: 3,
         maxRows: 3
     }" style="background-color: #EBEEF5; height: 95px; margin: 18px 0;" />
@@ -13,12 +12,12 @@ export default {
     components: {
         NButton, NInput
     },
-    emits: ["handleInput"],
     data() {
         return {
             newContent: "",
         }
     },
+    emits: ["handleInput"],
     methods: {
         handleInput() {
             this.$emit("handleInput", this.newContent);
@@ -27,5 +26,3 @@ export default {
     },
 }
 </script>
-<style>
-</style>

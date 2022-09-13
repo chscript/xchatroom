@@ -1,4 +1,4 @@
- <template>
+<template>
     <div class="chat-message">
         <ul>
             <li v-for="msg in chatMessageList">
@@ -99,7 +99,7 @@ export default {
     background-color: #95ec69;
 }
 
-.news-send .content .message span {
+/* .news-send .content .message span {
     position: absolute;
     top: 8px;
     right: -16px;
@@ -109,5 +109,5 @@ export default {
     font-size: 0px;
     border: 8px solid transparent;
     border-left-color: #95ec69;
-}
+} */
 </style>

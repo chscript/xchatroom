@@ -38,7 +38,6 @@
 </template>
 <script>
 import { NGradientText } from "naive-ui";
-import { debounce } from "lodash"
 import chatInput from "./subcomponent/chatInput.vue"
 import chatMessage from "./subcomponent/chatMessage.vue";
 import infoMessage from "./subcomponent/infoMessage.vue";
@@ -55,19 +54,8 @@ export default {
         onlineUser,
         ChatInput
     },
-    methods: {
-        fatherHandleInput: debounce(function (content) {
-            if (content !== null && content !== "" && !((/(^\s)/).test(content))) {
-                let data = {
-                    username: this.user.username,
-                    avatar: this.user.avatar,
-                    content: content,
-                    type: 0 //1代表别人，0代表自己
-                }
-                store.commit("updateChatMessageList", data);
-                socket.emit("chat message", data);
-            }
-        }, 500),
+    created() {
+        this.debouncedClick = _.debounce(this.fatherHandleInput(), 500);
     },
     mounted() {
         socket.on("chat message", data => {
@@ -84,6 +72,23 @@ export default {
             data.splice(index, 1);
             store.commit("updateOnlineUserList", data);
         });
+    },
+    unmounted() {
+        this.debouncedClick.cancel();
+    },
+    methods: {
+        fatherHandleInput(content) {
+            if (content !== null && content !== "" && !((/(^\s)/).test(content))) {
+                let data = {
+                    username: this.user.username,
+                    avatar: this.user.avatar,
+                    content: content,
+                    type: 0 //1代表别人，0代表自己
+                };
+                store.commit("updateChatMessageList", data);
+                socket.emit("chat message", data);
+            }
+        }
     },
     computed: {
         user() {
