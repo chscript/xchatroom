@@ -91,15 +91,7 @@ export default {
         }
     },
     computed: {
-        user() {
-            return store.state.user;
-        },
-        chatMessageList() {
-            return store.state.chatMessageList;
-        },
-        onlineUserList() {
-            return store.state.onlineUserList;
-        }
+        ...mapState(['user', 'chatMessageList', 'onlineUserList']);
     },
     watch: {
         $route(to, from) {
