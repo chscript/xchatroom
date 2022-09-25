@@ -1,5 +1,5 @@
 <template>
-    <n-input v-model="newContent" placeholder="请输入内容" type="textarea" :autosize="{
+    <n-input v-model="newContent" @keydown.enter="handleInput" placeholder="请输入内容" type="textarea" :autosize="{
         minRows: 3,
         maxRows: 3
     }" style="background-color: #EBEEF5; height: 95px; margin: 18px 0;" />
