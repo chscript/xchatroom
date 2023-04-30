@@ -1,4 +1,4 @@
-<h1 align="center">MeChat</h1>
+<h1 align="center">XChatRoom</h1>
 
 ## 项目所用技术：
 
